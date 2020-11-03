@@ -328,7 +328,7 @@ knit_print.bench_mark <- function(x, ..., options) {
     NextMethod()
   } else {
     x <- x[!colnames(x) %in% data_cols]
-    NextMethod()
+    NextMethod(object = x)
   }
 }
 
