@@ -325,9 +325,10 @@ parse_allocations <- function(filename) {
 #'     ```
 knit_print.bench_mark <- function(x, ..., options) {
   if (isTRUE(options$bench.all_columns)) {
-    print(x)
+    NextMethod()
   } else {
-    print(x[!colnames(x) %in% data_cols])
+    x <- x[!colnames(x) %in% data_cols]
+    NextMethod()
   }
 }
 
